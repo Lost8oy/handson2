@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ComputerController;
+use App\Http\Controllers\CountryController;
 use Illuminate\Support\Facades\Route;
 use App\Models\computer;
 
@@ -15,10 +17,12 @@ use App\Models\computer;
 */
 
 route::get('/', function() {
-    return view('computers', [
-        'computers' => computer::all()
-    ]);
+    return view('welcome');
 });
+
+route::get('/countries', [CountryController::class, 'read'])->name('country.read');
+route::post('/countries/create', [CountryController::class, 'create'])->name('country.create');
+
 
 route::get('/computers/{id}', function($id) {
     return view('computer', [

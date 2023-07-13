@@ -11,20 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('modelid', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('model_id')->constrained();
+            $table->string('name');
+            $table->text('description');
             $table->timestamps();
             $table->softDeletes();
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('modelid');
+        Schema::dropIfExists('countries');
     }
 };
