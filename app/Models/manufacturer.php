@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class computer extends Model
 {
     use HasFactory;
-
+    protected $fillable = [
+        'country_id',
+        'name',
+        'link',
+        'description',
+    ];
     public function country() {
         return $this->belongsTo('App\Models\country','country_id','id');
     }

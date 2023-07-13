@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class modelid extends Model {
     use HasFactory;
-
+    protected $fillable = [
+        'model_id'
+    ];
     public function computer() {
         return $this->belongsTo('App\Models\computer', 'model_id', 'id');
     }
