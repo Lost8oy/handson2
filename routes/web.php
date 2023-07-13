@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\computer;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+route::get('/', function() {
+    return view('computers', [
+        'computers' => computer::all()
+    ]);
+});
+
+route::get('/computers/{id}', function($id) {
+    return view('computer', [
+        'computer' => computer::find($id)
+    ]);
 });
