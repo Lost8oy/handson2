@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\keyboard;
 use Illuminate\Http\Request;
 
-class KeyboardsController extends Controller
+class KeyboardController extends Controller
 {
     public function create () {
-        return view('Keyboard.create');
+        return view('keyboard.create');
     }
     public function index () {
-        $Keyboards = keyboard::all();
-        return view('keyboard.index', ['Keyboards' => $Keyboards]);
+        $keyboards = keyboard::all();
+        return view('keyboard.index', ['keyboards' => $keyboards]);
     }
     public function store (Request $request) {
         $data = $request->validate([

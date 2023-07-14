@@ -17,7 +17,7 @@
     </div>
     <div>
         <div>
-            <a href="{{route('country.create')}}">Create a Country</a>
+            <a href="{{route('keyboard.create')}}">Add a Keyboard</a>
         </div>
         <table>
             <tr>
@@ -28,10 +28,11 @@
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            @foreach ($countries as $country)
+            @foreach ($keyboards as $keyboard)
             <tr>
-                <td>{{$keyboard->id}}</td>
-                <td>{{$keyboard->name}}</td>
+                <td>{{$keyboard->inventory_number}}</td>
+                <td>{{$keyboard->model}}</td>
+                <td>{{$keyboard->manufacturer_id}}</td>
                 <td>{{$keyboard->description}}</td>
                 <td>
                     <a href="{{route('keyboard.edit', ['keyboard' => $keyboard])}}">Edit</a>

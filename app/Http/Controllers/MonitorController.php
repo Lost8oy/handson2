@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 class MonitorController extends Controller
 {
     public function create () {
-        return view('Keyboard.create');
+        return view('monitor.create');
     }
     public function index () {
-        $Monitors = monitor::all();
-        return view('monitor.index', ['Monitors' => $Monitors]);
+        $monitors = monitor::all();
+        return view('monitor.index', ['monitors' => $monitors]);
     }
     public function store (Request $request) {
         $data = $request->validate([

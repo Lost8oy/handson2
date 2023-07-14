@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="{{route('country.update', ['country' => $country])}}">
+    <form method="post" action="{{route('computer.update', ['computer' => $computer])}}">
         @csrf
         @method('put')
         <div>

@@ -17,9 +17,9 @@
     </div>
     <div>
         <div>
-            <a href="{{route('country.create')}}">Add a Computer</a>
+            <a href="{{route('computer.create')}}">Add a Computer</a>
         </div>
-        <table>
+        <table border="1px">
             <tr>
                 <th>ID</th>
                 <th>Manufacturer</th>
@@ -45,10 +45,10 @@
                 <td>{{$computer->bit}}</td>
                 <td>{{$computer->description}}</td>
                 <td>
-                    <a href="{{route('country.edit', ['country' => $country])}}">Edit</a>
+                    <a href="{{route('computer.edit', ['computer' => $computer])}}">Edit</a>
                 </td>
                 <td>
-                    <form method="post" action="{{route('country.destroy', ['country' => $country])}}">
+                    <form method="post" action="{{route('computer.destroy', ['computer' => $computer])}}">
                         @csrf
                         @method('delete')
                         <input type="submit" value="Delete" />

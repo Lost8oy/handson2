@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\manufacturer;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
+use App\Models\manufacturer;
 
-class ManufactureController extends Controller
+class ManufacturerController extends Controller
 {
     public function read(){
         return view('manufacturer.read');
@@ -17,8 +17,8 @@ class ManufactureController extends Controller
     }
 
     public function index(){
-        $manufacturers = manufacturers::all();
-        return view('country.index', ['manufacturers' => $manufacturers]);
+        $manufacturers = manufacturer::all();
+        return view('manufacturer.index', ['manufacturers' => $manufacturers]);
 
     }
     public function store(Request $request){
@@ -33,7 +33,7 @@ class ManufactureController extends Controller
     }
 
     public function edit (manufacturer $manufacturer){
-        return view('manufacturer.edit', ['manufacturer' => $manufaturer]);
+        return view('manufacturer.edit', ['manufacturer' => $manufacturer]);
     }
     public function update (manufacturer $manufacturer, Request $request) {
         $data = $request->validate([

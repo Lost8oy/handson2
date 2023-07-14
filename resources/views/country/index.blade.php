@@ -17,30 +17,26 @@
     </div>
     <div>
         <div>
-            <a href="{{route('monitor.create')}}">Create a Monitor</a>
+            <a href="{{route('country.create')}}">Add a Country</a>
         </div>
         <table>
             <tr>
                 <th>ID</th>
-                <th>Inventory Number</th>
-                <th>Model</th>
-                <th>Manufacturer</th>
+                <th>Name</th>
                 <th>Description</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            @foreach ($monitors as $monitor)
+            @foreach ($countries as $country)
             <tr>
-                <td>{{$monitor->id}}</td>
-                <td>{{$monitor->inventory_number}}</td>
-                <td>{{$monitor->model}}</td>
-                <td>{{$monitor->manufacturer}}</td>
-                <td>{{$monitor->description}}</td>
+                <td>{{$country->id}}</td>
+                <td>{{$country->name}}</td>
+                <td>{{$country->description}}</td>
                 <td>
-                    <a href="{{route('monitor.edit', ['monitor' => $monitor])}}">Edit</a>
+                    <a href="{{route('country.edit', ['country' => $country])}}">Edit</a>
                 </td>
                 <td>
-                    <form method="post" action="{{route('monitor.destroy', ['monitor' => $monitor])}}">
+                    <form method="post" action="{{route('country.destroy', ['country' => $country])}}">
                         @csrf
                         @method('delete')
                         <input type="submit" value="Delete" />
