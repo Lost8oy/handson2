@@ -20,6 +20,20 @@ route::get('/', function() {
     return view('welcome');
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 route::get('/country', [ComputerController::class, 'index'])->name('country.index');
 route::get('/country/create', [ComputerController::class, 'create'])->name('country.create');
 route::post('/country', [ComputerController::class, 'store'])->name('country.store');

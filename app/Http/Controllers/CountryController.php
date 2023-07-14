@@ -34,11 +34,11 @@ class CountryController extends Controller
         ]);
 
         $country->update($data);
-        return redirect(route('product.index'))->with('success', 'Product Update Sucesffully');
+        return redirect(route('country.index'))->with('success', 'Country Update Sucesffully');
 
     }
     public function destroy (Country $country) {
         $country->delete();
-        return redirect(route('country.index'))->with('success', 'Product delated Sucesffully');
+        return redirect(route('country.index'))->with('success', 'Country delated Sucesffully');
     }
 }
