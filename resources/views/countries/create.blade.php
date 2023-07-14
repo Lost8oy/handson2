@@ -16,7 +16,7 @@
             <input type="text" name="name" placeholder="Name"/>
         </div>
         <div>
-            <label>Comment</label>
+            <label>Description</label>
             <input type="text" name="description" placeholder="Description"/>
         </div>
         <div>

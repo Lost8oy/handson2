@@ -7,24 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="{{route('manufacturer.update', ['manufacturer' => $manufacturer])}}">
+    <form method="post" action="{{route('keyboard.update', ['keyboard' => $keyboard])}}">
         @csrf
         @method('put')
         <div>
-            <label>Country</label>
-            <input type="text" name="country" placeholder="Country"/>
+            <label>Inventory Number</label>
+            <input type="text" name="inventory_number" placeholder="Inventory Number"/>
         </div>
         <div>
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Name"/>
+            <label>Model</label>
+            <input type="text" name="model" placeholder="Model"/>
         </div>
         <div>
-            <label>Link</label>
-            <input type="text" name="link" placeholder="Link"/>
+            <label>Manufacturer</label>
+            <input type="text" name="manufacturer" placeholder="Manufacturer"/>
         </div>
         <div>
             <label>Description</label>
-            <input type="text" name="description" placeholder="Description"/>
+            <input type="text" name="model" placeholder="Model"/>
         </div>
         <div>
             <input type="submit" value="Update" />

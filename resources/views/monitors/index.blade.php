@@ -17,30 +17,30 @@
     </div>
     <div>
         <div>
-            <a href="{{route('manufacturer.create')}}">Create a Manufacturer</a>
+            <a href="{{route('monitor.create')}}">Create a Monitor</a>
         </div>
         <table>
             <tr>
                 <th>ID</th>
-                <th>Country</th>
-                <th>Name</th>
-                <th>Link</th>
+                <th>Inventory Number</th>
+                <th>Model</th>
+                <th>Manufacturer</th>
                 <th>Description</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            @foreach ($manufacturers as $manufacturer)
+            @foreach ($monitors as $monitor)
             <tr>
-                <td>{{$manufacturer->id}}</td>
-                <td>{{$manufacturer->country_id}}</td>
-                <td>{{$manufacturer->name}}</td>
-                <td>{{$manufacturer->link}}</td>
-                <td>{{$manufacturer->description}}</td>
+                <td>{{$monitor->id}}</td>
+                <td>{{$monitor->inventory_number}}</td>
+                <td>{{$monitor->model}}</td>
+                <td>{{$monitor->manufacturer}}</td>
+                <td>{{$monitor->description}}</td>
                 <td>
-                    <a href="{{route('manufacturer.edit', ['manufacturer' => $manufacturer])}}">Edit</a>
+                    <a href="{{route('monitor.edit', ['monitor' => $monitor])}}">Edit</a>
                 </td>
                 <td>
-                    <form method="post" action="{{route('manufacturer.destroy', ['manufacturer' => $manufacturer])}}">
+                    <form method="post" action="{{route('monitor.destroy', ['monitor' => $monitor])}}">
                         @csrf
                         @method('delete')
                         <input type="submit" value="Delete" />

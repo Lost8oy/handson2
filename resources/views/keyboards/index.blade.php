@@ -17,30 +17,27 @@
     </div>
     <div>
         <div>
-            <a href="{{route('manufacturer.create')}}">Create a Manufacturer</a>
+            <a href="{{route('country.create')}}">Create a Country</a>
         </div>
         <table>
             <tr>
-                <th>ID</th>
-                <th>Country</th>
-                <th>Name</th>
-                <th>Link</th>
+                <th>Inventory Number</th>
+                <th>Model</th>
+                <th>Manufacturer</th>
                 <th>Description</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            @foreach ($manufacturers as $manufacturer)
+            @foreach ($countries as $country)
             <tr>
-                <td>{{$manufacturer->id}}</td>
-                <td>{{$manufacturer->country_id}}</td>
-                <td>{{$manufacturer->name}}</td>
-                <td>{{$manufacturer->link}}</td>
-                <td>{{$manufacturer->description}}</td>
+                <td>{{$keyboard->id}}</td>
+                <td>{{$keyboard->name}}</td>
+                <td>{{$keyboard->description}}</td>
                 <td>
-                    <a href="{{route('manufacturer.edit', ['manufacturer' => $manufacturer])}}">Edit</a>
+                    <a href="{{route('keyboard.edit', ['keyboard' => $keyboard])}}">Edit</a>
                 </td>
                 <td>
-                    <form method="post" action="{{route('manufacturer.destroy', ['manufacturer' => $manufacturer])}}">
+                    <form method="post" action="{{route('keyboard.destroy', ['keyboard' => $keyboard])}}">
                         @csrf
                         @method('delete')
                         <input type="submit" value="Delete" />
