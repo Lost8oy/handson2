@@ -7,21 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Add a Computer</h1>
-    <form method="post" action="{{route('computer.store')}}">
+    <form method="post" action="{{route('country.update', ['country' => $country])}}">
         @csrf
-        @method('post')
+        @method('put')
         <div>
             <label>Name</label>
-            <input type="text" name="name" placeholder="Name"/>
+            <input type="text" name="name" placeholder="Name "/>
         </div>
         <div>
-            <label>Comment</label>
+            <label>Description</label>
             <input type="text" name="description" placeholder="Description"/>
         </div>
         <div>
-            <input type="submit" value="Save a new Country" />
+            <input type="submit" value="Update" />
         </div>
-    </form>
 </body>
 </html>
