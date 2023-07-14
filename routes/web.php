@@ -20,23 +20,9 @@ route::get('/', function() {
     return view('welcome');
 });
 
+route::get('/countries', [CountryController::class, 'read'])->name('country.read');
+route::get('/countries/create', [CountryController::class, 'create'])->name('country.create');
+route::get('/manufacturers', [ManufactureController::class, 'read'])->name('manufacturer.read');
+route::get('/manufacturers', [ManufactureController::class, 'create'])->name('manufacturer.create');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-route::get('/country', [ComputerController::class, 'index'])->name('country.index');
-route::get('/country/create', [ComputerController::class, 'create'])->name('country.create');
-route::post('/country', [ComputerController::class, 'store'])->name('country.store');
-route::get('/country/{country}/edit', [ComputerController::class, 'edit'])->name('country.edit');
-route::get('/country/{country}/update', [ComputerController::class, 'update'])->name('country.update');
-route::get('/country/{country}/destroy', [ComputerController::class, 'destroy'])->name('country.delete');
