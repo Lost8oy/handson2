@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Add a Computer</h1>
-    <form method="post" action="{{route('computer.store')}}">
+    <h1>Add a Country</h1>
+    <form method="post" action="{{route('country.store')}}">
         @csrf
         @method('post')
         <div>
