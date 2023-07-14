@@ -11,8 +11,8 @@ class CountryController extends Controller
         return view('country.create');
     }
     public function index () {
-        $counries = Country::all();
-        return view('country.index', ['counties' => $counries]);
+        $countries = Country::all();
+        return view('country.index', ['countries' => $countries]);
     }
     public function store (Request $request) {
         $data = $request->validate([
@@ -21,7 +21,7 @@ class CountryController extends Controller
         ]);
 
         $newcountry = country::create($data);
-        return redirect(route('product.index'));
+        return redirect(route('country.index'));
 
     }
     public function edit (Country $country){
@@ -34,11 +34,11 @@ class CountryController extends Controller
         ]);
 
         $country->update($data);
-        return redirect(route('country.index'))->with('success', 'Country Update Sucesffully');
+        return redirect(route('country.index'))->with('success', 'Country Update Successfully');
 
     }
     public function destroy (Country $country) {
         $country->delete();
-        return redirect(route('country.index'))->with('success', 'Country delated Sucesffully');
+        return redirect(route('country.index'))->with('success', 'Country delated Successfully');
     }
 }
