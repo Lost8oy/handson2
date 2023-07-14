@@ -21,7 +21,9 @@ route::get('/', function() {
 });
 
 route::get('/countries', [CountryController::class, 'read'])->name('country.read');
-route::post('/countries/create', [CountryController::class, 'create'])->name('country.create');
+route::get('/countries/create', [CountryController::class, 'create'])->name('country.create');
+route::get('/manufacturers', [ManufactureController::class, 'read'])->name('manufacturer.read');
+route::get('/manufacturers', [ManufactureController::class, 'create'])->name('manufacturer.create');
 
 
 route::get('/computers/{id}', function($id) {
